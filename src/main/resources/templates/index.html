@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Главная</title>
+</head>
+<body>
+<h1 th:text="${message}">Загрузка...</h1>
+
+<form action="/send" method="post">
+  <input type="text" name="text" placeholder="Сообщение боту"/>
+  <button type="submit">Отправить боту</button>
+</form>
+
+</body>
+</html>
