@@ -5,7 +5,7 @@ import jakarta.persistence.*;
 import lombok.*;
 
 @Entity
-@Table(name = "user")
+@Table(name = "users")
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
@@ -13,9 +13,12 @@ import lombok.*;
 @Setter
 public class User {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "gen_nsi")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false, updatable = false)
     private Long id;
+
+    @Column(name = "user_id", nullable = false, updatable = false)
+    private Long userId;
 
     @Column(name = "username", length = 50)
     private String username;
@@ -25,7 +28,4 @@ public class User {
 
     @Column(name = "last_name", length = 50)
     private String lastName;
-
-    @Column(name = "chat_id")
-    private Long chatId;
 }
